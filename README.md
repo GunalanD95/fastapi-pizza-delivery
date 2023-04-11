@@ -2,7 +2,7 @@
 
 
 
-## <ins> INSTRUCTIONS : </ins>
+##  INSTRUCTIONS :
 
 - ACTIVATE VIRTUTAL ENVIRONMENT
 ```
