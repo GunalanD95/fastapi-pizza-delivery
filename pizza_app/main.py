@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from . routers import auth_routes , order_routes
 from .model import models
 from .database import db 
-
+from fastapi_jwt_auth import AuthJWT
+from .schemas.schema import Settings
 
 # app instance
 app = FastAPI()
@@ -14,6 +15,13 @@ models.Base.metadata.create_all(db.engine)
 @app.get("/")
 def index():
     return 'Hello World'
+
+# callback to get your configuration
+@AuthJWT.load_config
+def get_config():
+    return Settings()
+
+
 
 
 
